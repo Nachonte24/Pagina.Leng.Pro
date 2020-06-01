@@ -1,0 +1,56 @@
+/*ESTILO DEFAULT*/
+body{
+	background-image: url(../Imagenes/fondo.jpg);
+}
+
+
+/*TERMINA ESTILO DEFAULT*/
+.imagen{
+	margin-top: 5%;
+	text-align:center;
+}
+
+h1{
+	color: white;
+	text-align: center;
+	font-size: 400%;
+}
+
+.sub1{
+	color:white;
+	font-size:120%;
+	height: 100px;
+	background-color: #FD573D;
+	height: 20%;
+	width: 40%;
+	padding: 10px;
+	margin: 5% 30% 0 30%;
+	text-align: center;
+}
+.sub2{
+	width: 40%;
+	color:white;
+	font-size:120%;
+	background-color: #FF9333;
+	margin: 5% 30% 0 30%;
+	padding: 10px;
+	text-align: center;
+}
+.sub3{
+	width: 40%;
+	color:white;
+	font-size:120%;
+	background-color: #FFD933;
+	padding: 10px;
+	margin: 5% 30% 5% 30%;
+	text-align: center;
+}
+.sub4{
+	width: 40%;
+	color:white;
+	font-size:120%;
+	background-color: #20A9F0;
+	padding: 10px;
+	margin: 5% 30% 5% 30%;
+	text-align: center;
+}

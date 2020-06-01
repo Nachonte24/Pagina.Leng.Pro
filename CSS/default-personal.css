@@ -1,0 +1,12 @@
+.img1{
+	width: 30%;
+}
+h1{
+	text-align: center;
+}
+.img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9, .img10{
+	text-align:center;
+	width:30%;
+	margin-left:2%;
+	margin-right:2%;
+}

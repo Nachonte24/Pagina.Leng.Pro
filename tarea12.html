@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 12</title>
+<link rel="stylesheet" type="text/css" href="CSS/es-programas.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea11.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea13.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<center><h1>TAREA 12</h1></center>
+			<p></p>
+			
+			<hr>
+			
+			<p><h2>DESCRIPCION</h2><p></p>
+			<i></pre>
+Construya un programa en JAVA y RUBY. Que calcule e imprima la siguiente serie para los N primeros  términos
+2,─3,─5,─7,4,6,─9,─11,─13,8,10,12,-15,-17,-19,14,....
+			</pre></i>
+			
+			<hr>
+			
+			<h2>PROGRAMACION JAVA</h2><p></p>
+			<pre>
+/*  NOMBRE : OSCAR IGNACIO GUAJARDO HERNANDEZ
+MATRICULA : 1865021  HORA: V4-6;*/
+
+import javax.swing.JOptionPane;
+
+public class T12SerieC
+{
+	public static void main(String[] args) {
+
+		String ventana, mensaje = "";
+		int posDeseada, posicion = 1, nPos = 2, nNeg = -3, k=0;
+		boolean positivo = true;
+		ventana = JOptionPane.showInputDialog("BIENVENIDO A LA SERIE C"
+				+ "Introduzca la posicion que desea llegar");
+		posDeseada = Integer.parseInt(ventana);
+		
+
+		for (int i = 1; i < posDeseada; i++)
+		{
+			if (positivo) {
+				for (int y = 1; y <= posicion; y++) {
+					if (k >= posDeseada) {
+						JOptionPane.showMessageDialog(null, mensaje);
+						System.exit(0);
+					} else {
+						mensaje += nPos + ", ";
+						nPos += 2;
+						k++;
+					}
+				}
+				positivo = false;
+				posicion++;
+			} else {
+				for (int y = 1; y <= 3; y++) {
+					if (k >= posDeseada) {
+						JOptionPane.showMessageDialog(null, mensaje);
+						System.exit(0);
+					} else {
+						mensaje += nNeg + ", ";
+						nNeg -= 2;
+						k++;
+					}
+				}
+				positivo = true;
+			}
+		}
+	}
+}
+			</pre>
+
+		<hr>
+
+			<h2>PROGRAMACION RUBY</h2><p></p>
+			<pre>
+=begin
+Nombre: OSCAR IGNACIO GUAJARDO HERNANDEZ
+Matricula:1865021
+Hora: V4-6 Martes
+=end
+puts "BIENVENIDO A LA SERIE C: "
+puts "Introduzca hasta que posicion desea: "
+posdes = gets().to_i
+posicion = 1
+nPos = 2
+nNeg =-3
+positivo = true
+k = 0
+print "Serie: "
+for i in (1..posdes)
+  if(positivo==true)then
+    for y in (1..posicion)
+      if(k>=posdes)then
+      abort("")
+      else
+      print("#{nPos}, ")
+      nPos=nPos+2
+      k=k+1
+      end
+    end
+    positivo=false
+    posicion=posicion+1
+  else
+    for y in (1..3)
+      if(k>=posdes)then
+        abort("")
+      else
+      print("#{nNeg}, ")
+      nNeg=nNeg-2
+      k=k+1
+      end
+    end
+    positivo=true
+  end
+
+end
+			</pre>
+
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/*ESTILO DEFAULT*/
+body{
+	background-image: url(../Imagenes/fondo.jpg);
+}
+/*ESTILO DEL MENU PRINCIPAL*/
+.regresar, .principal, .siguiente{
+	float: left;
+	text-align: center;
+	font-size: 120%;
+	padding-top:1%;
+	padding-bottom: 1%;
+	border: 1px solid white;
+	margin-bottom: 3%;
+}
+
+.regresar{
+	width: 19%;
+	background-color:#FDA73D;
+
+}
+
+.principal{
+	width: 60%;
+	background-color: #FD653D;
+}
+
+.siguiente{
+	width: 19%;
+	background-color:#FDA73D;
+}
+
+.tarea{
+	display: inline-block;
+	width: 80%;
+	margin-left:10%;
+	font-size: 110%;
+	color: white;
+}
+

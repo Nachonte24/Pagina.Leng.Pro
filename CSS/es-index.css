@@ -1,0 +1,36 @@
+/*ESTILO DEFAULT*/
+body{
+	background-image: url(../Imagenes/fondo.jpg)
+}
+/*TERMINA ESTILO DEFAULT*/
+
+.perfil{
+	float: left;
+	width:40%;
+	height:60%;
+	margin-left: 5%;
+	margin-top: 5%
+}
+table, td{
+border: 2px solid white;
+	font-size: 150%;
+}
+table {
+	float: right;
+	color: white;
+	margin-top: 10%;
+	margin-right:5%
+}
+.menutareas{
+	float: right;
+	margin-right: 15%;
+	margin-top: 5%;
+	font-size: 200%;
+}
+.principales{
+	float: right;
+	margin-right:10%;
+	margin-top: 5%;
+	
+	font-size: 200%;
+}

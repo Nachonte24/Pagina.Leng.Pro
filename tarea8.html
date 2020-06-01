@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 8</title>
+<link rel="stylesheet" type="text/css" href="CSS/es-programas.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea7.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea9.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<center><h1>TAREA 8</h1></center>
+			<p></p>
+			
+			<hr>
+			
+			<p><h2>DESCRIPCION</h2><p></p>
+			<i>Elabore un programa en JAVA Y RUBY que mediante un Menú de opciones permita calcular la conversión de escala de temperatura:
+			<p></p>1. De grados Centígrados a grados Farenheit
+			<p></p>2. De grados Farenheita grados Centígrados
+			<p></p>(Nota: El cuadro de dialogo para seleccionar que sea usando botones: °C -> °F  y otro °F -> °C)</i>
+			
+			<hr>
+			
+			<h2>PROGRAMACION JAVA</h2><p></p>
+			<pre>
+			/*  NOMBRE : OSCAR IGNACIO GUAJARDO HERNANDEZ
+MATRICULA : 1865021  HORA: V4-6;*/
+
+import javax.swing.JOptionPane;
+
+public class T8Temperatura
+{
+		public static void main (String[] arg)
+		{
+			String Ventana;
+			double C = 0,F = 0;
+			String[] options = {"Cancelar", "°C -> °F", "F -> °C"};
+			
+			int opcion = JOptionPane.showOptionDialog(
+					null,
+					"BIENVENIDO A LA CONVERSION DE TEMPERATRURAS\n"
+				    + "Selecione una opcion\n"
+				    +"1. De grados Centigrados a Fahrenheit\n"
+				    +"2. De grados Fahrenheit a Centigrados\n",
+					"Numeros", //TITLE
+					JOptionPane.YES_NO_CANCEL_OPTION, //optionType
+					JOptionPane.QUESTION_MESSAGE, //messageType
+					null, //icon
+					options, //options
+					options[0]); //initialvalue
+
+			switch (opcion)
+			{
+				case 1:
+					Ventana = JOptionPane.showInputDialog("Ingrese los grados Centigrados");
+					C = Double.parseDouble(Ventana);
+					F = (C*1.8)+ 32; 
+				break;
+				case 2: 
+					Ventana = JOptionPane.showInputDialog("Ingrese los grados Fahrenheit");
+					F = Double.parseDouble(Ventana);
+					C = (F-32)*(5/9);
+				break;
+			}
+			
+			JOptionPane.showMessageDialog(null, C+" grados Centigrados es igual a "+F+" grados Fahrenheit");
+		}
+}
+
+			</pre>
+		
+		<hr>
+
+			<h2>PROGRAMACION RUBY</h2><p></p>
+			<pre>
+=begin
+Nombre: OSCAR IGNACIO GUAJARDO HERNANDEZ
+Matricula:1865021
+Hora: V4-6 Martes
+=end
+
+puts 'BIENVENIDO A LA CONVERSION DE TEMPERATRURAS'
+puts 'Selecione una opcion'
+puts '1. De grados Centigrados a Fahrenheit'
+puts '2. De grados Fahrenheit a Centigrados'
+print "Ingrese la opción deseada "
+opcion = gets().to_i
+case opcion
+when 1
+  print 'Ingrese los grados Centigrados'
+  C = gets().to_i
+  F = (C*1.8)+ 32
+  print ("#{C} grados Centigrados es igual a #{F} grados Fahrenheit")
+when 2
+  print 'Ingrese los grados Fahrenheit'
+  F = gets().to_i
+  C = (F-32)*(5.0/9.0)
+  print("#{F} grados Fahrenheit es igual a #{C} grados Centigrados")
+end
+			</pre>	
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>

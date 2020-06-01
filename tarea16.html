@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 16</title>
+<link rel="stylesheet" type="text/css" href="CSS/es-programas.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea15.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="MenuTareas.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<center><h1>TAREA 16</h1></center>
+			<p></p>
+			
+			<hr>
+			
+			<p><h2>DESCRIPCION</h2><p></p>
+			<i></pre>
+			Elaborar un programa en JAVA y RUBY que calcule la multiplicación de dos matrices que ingrese el usuario. (nota: Validar lo que 
+			sea necesario para poder realizar la multiplicación de matrices)
+			</pre></i>
+			
+			<hr>
+			
+			<h2>PROGRAMACION JAVA</h2><p></p>
+			<pre>
+import javax.swing.JOptionPane;
+
+public class T16MultiMatrices
+{
+	public static void main (String[] arg)
+	{
+		String ventana, mensaje="";
+		int i, n, m, o, p, j, k;
+			JOptionPane.showMessageDialog(null, "BIENVENIDO A LA MULTIPLICACION DE MATRICES\n");
+			//DECLARACION DE MATRICES
+			//PRIMERA MATRIZ
+			JOptionPane.showMessageDialog(null,"Vamos a empezar declarando las dimensiones de la PRIMERA matriz ");
+			ventana = JOptionPane.showInputDialog("Introduzca el numero de filas");
+			n = Integer.parseInt(ventana);
+			ventana = JOptionPane.showInputDialog("Introduzca el numero de columnas");
+			m = Integer.parseInt(ventana);
+			int A[][] = new int [n][m];
+			JOptionPane.showMessageDialog(null, "Ahora rellenaremos la PRIMERA Matriz");
+			for(i=0; i< n; i++)
+			{
+				for(j=0; j< m; j++)
+				{
+					ventana = JOptionPane.showInputDialog("Introduzca el numero en A["+i+"]["+j+"]: ");
+					A[i][j] = Integer.parseInt(ventana);
+				}
+			}
+			//SEGUNDO MATRIZ
+			JOptionPane.showMessageDialog(null,"Vamos a empezar declarando las dimensiones de la SEGUNDA matriz ");
+			ventana = JOptionPane.showInputDialog("Introduzca el numero de filas");
+			o = Integer.parseInt(ventana);
+			ventana = JOptionPane.showInputDialog("Introduzca el numero de columnas");
+			p = Integer.parseInt(ventana);
+			int B[][] = new int [o][p];
+			JOptionPane.showMessageDialog(null, "Ahora rellenaremos la SEGUNDA Matriz");
+			for(i=0; i< o; i++)
+			{
+				for(j=0; j< p; j++)
+				{
+					ventana = JOptionPane.showInputDialog("Introduzca el numero en B["+i+"]["+j+"]: ");
+					B[i][j] = Integer.parseInt(ventana);
+				}
+			}
+			//VALIDACION PARA LA MULTIPLICACION DE MATRICES
+			if(m!=o)
+			{
+				JOptionPane.showMessageDialog(null, "NO SE PUEDE SEGUIR CON LA MULTIPLICACION\n"
+						+ "Las dimensiones de ambas matrices no son iguales\n"
+						+ "Intente de nuevo");
+				System.exit(0);
+			}
+			//DECLARACION DE UNA MATRIZ DE RESULTADO
+			int C[][] = new int [n][p];
+			//MULTIPLICACION DE MATRICES
+			for ( i = 0; i < n; i++) {
+	            for ( j = 0; j < p; j++) {
+	                for ( k = 0; k < m; k++) {
+	                    // aquí se multiplica la matriz
+	                    C[i][j] += A[i][k] * B[k][j];
+	                }
+	            }
+	        }
+	    
+			//IMPRESION DE MATRIZ
+			mensaje = "MATRIZ A\n";
+			for(i=0; i< n; i++)
+			{
+				for(j=0; j< m; j++)
+				{
+					mensaje=mensaje+A[i][j]+", ";
+				}
+				mensaje=mensaje+"\n";
+			}
+			mensaje =mensaje+ "MATRIZ B\n";
+			for(i=0; i< o; i++)
+			{
+				for(j=0; j< p; j++)
+				{
+					mensaje=mensaje+B[i][j]+", ";
+				}
+				mensaje=mensaje+"\n";
+			}
+			mensaje =mensaje+ "MATRIZ RESULTADO\n";
+			for(i=0; i< n; i++)
+			{
+				for(j=0; j< p; j++)
+				{
+					mensaje=mensaje+C[i][j]+", ";
+				}
+				mensaje=mensaje+"\n";
+			}
+			JOptionPane.showMessageDialog(null, mensaje);
+			
+	}
+}
+			</pre>
+
+		<hr>
+
+			<h2>PROGRAMACION RUBY</h2><p></p>
+			<pre>
+=begin
+Nombre: OSCAR IGNACIO GUAJARDO HERNANDEZ
+Matricula:1865021
+Hora: V4-6 Martes
+=end
+mensaje =""
+puts "BIENVENIDO  A LA MULTIPLICACION DE MATRICES"
+puts "Vamos a empezar declarando las dimensiones de la PRIMERA matriz "
+puts"Introduzca el numero de filas"
+n = gets().to_i
+puts"Introduzca el numero de columnas"
+m = gets().to_i
+a = Array.new(n){Array.new(m)}
+puts "Ahora rellenaremos la PRIMERA  Matriz"
+for i in (0...n)
+  for j in (0...m)
+    print "Introduzca el numero en A[#{i+1}][#{j+1}]: "
+    a[i][j]= gets().to_i
+  end
+end
+
+puts "Vamos a empezar declarando las dimensiones de la SEGUNDA matriz "
+puts"Introduzca el numero de filas"
+o = gets().to_i
+puts"Introduzca el numero de columnas"
+p = gets().to_i
+b = Array.new(o){Array.new(p)}
+puts "Ahora rellenaremos la SEGUNDA  Matriz"
+for i in (0...o)
+  for j in (0...p)
+    print "Introduzca el numero en B[#{i+1}][#{j+1}]: "
+    b[i][j]= gets().to_i
+  end
+end
+
+if m!=o
+  puts "NO SE PUEDE SEGUIR CON LA MULTIPLICACION"
+  puts "Las dimensiones de ambas matrices no coinciden con las condiciones"
+  puts "Intente de nuevo"
+  abort("")
+end
+
+c = Array.new(n){Array.new(p,0)}
+
+for i in (0...n)
+  for j in (0...p)
+    for k in (0...m)
+      c[i][j] = c[i][j] + ((a[i][k]) * (b[k][j]))
+    end
+  end
+end
+
+mensaje ="MATRIZ A \n"
+for i in (0...n)
+  for j in (0...m)
+    mensaje="#{mensaje} #{a[i][j]}, "
+  end
+  mensaje = "#{mensaje} \n"
+end
+mensaje = "#{mensaje} MATRIZ B \n"
+for i in (0...o)
+  for j in (0...p)
+    mensaje="#{mensaje} #{b[i][j]}, "
+  end
+  mensaje = "#{mensaje} \n"
+end
+mensaje = "#{mensaje} MATRIZ RESULTADO \n"
+for i in (0...n)
+  for j in (0...p)
+    mensaje="#{mensaje} #{c[i][j]}, "
+  end
+  mensaje = "#{mensaje} \n"
+end
+
+puts mensaje
+			</pre>
+
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>

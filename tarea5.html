@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 5</title>
+<link rel="stylesheet" type="text/css" href="CSS/default.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea4.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea6.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<h1>TAREA 5</h1>
+			<p></p>
+			<p><h2>SCHEME</h2><p></p>
+			
+<hr>
+			<h3>DESCRIPCION</h3>
+ <i><pre>
+Investigar:
+Símbolos, sintaxis, esqueleto de los programas
+Aplicación a descargar para editar y ejecutar
+Paradigma
+Un ejemplo de un programa escrito en ese lenguaje
+ </pre></i>
+			<hr>
+			
+			<h3>Simbolos, sintaxis, esqueleto de programas</h3><p></p>
+			<pre>
+<strong>SINTAXIS BASICA DEL LENGUAJE</strong>
+Expresion: Puede ser un átomo o lista
+
+Átomo : Puede ser un numero o string o identificador o carácter o boolean
+Elemento basico -> Identificador, letras y dígitos
+
+Lista: ‘(‘secuencia-expresion’)’
+(Conjunto de elementos entre paréntesis): formado por atomos y listas
+
+Secuencia-expresion : expresión secuencia-expresion | expresión
+
+Función:  (nombre_funcion argumento1, argumento2, argumenton)
+
+<strong>COMPARADORES ARITMETICOS DIFERENTES A OTROS LENGUAJES</strong>
+Even? ¿Es numero par?
+
+odd? ¿Es numero impas?
+
+Zero? ¿Es cero el numero?
+
+Ejemplo: (zero? 1) -> false
+
+<strong>FUNCIONES PARA MANIPULAR LISTAS</strong>
+
+Car: Devuelve el primer elemento de la lista 
+(car ‘(A B C)) -> ‘A
+
+Cdr: Devuelve la lista eliminando el primer elemento
+(cdr’(A B C)) -> ‘(B C)
+
+<strong>ESQUELETO DEL PROGRAMA</strong>
+VENTANA DE FUNCIONES
+Definición de alguna función
+VENTANA DE INTERACCION
+Pedimos la función declarada con algún parametro
+
+</pre>
+			<h3>Aplicacion a descargar para editar y ejecutar</h3><p></p>
+			DrScheme
+			<h3>Paradigma al que pertenece</h3><p></p>
+			Lenguaje de programación funcional
+			<h3>Ejemplo de programa</h3><p></p>	
+		<pre>
+		> (define pi 3.14159)
+> pi
+3.14159
+> (sin (/ pi 2))
+0.9999999999991198
+> (define a (+ 2 (* 3 4)))
+> a
+14
+
+		</pre>
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>

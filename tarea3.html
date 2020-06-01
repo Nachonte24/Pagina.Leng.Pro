@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 3</title>
+<link rel="stylesheet" type="text/css" href="CSS/default.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea2.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea4.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<h1>TAREA 3</h1>
+			<p></p>
+			<hr>
+			<h3>DESCRIPCION</h3>
+ <i><pre>
+Investigar:
+Símbolos, sintaxis, esqueleto de los programas
+Aplicación a descargar para editar y ejecutar
+Paradigma
+Un ejemplo de un programa escrito en ese lenguaje
+ </pre></i>
+			<hr>
+			<p><h2>PROLOG</h2><p></p>
+			<h3>Simbolos, sintaxis, esqueleto de programas</h3><p></p>
+			<pre>
+<strong>DATOS</strong>
+El sistema Prolog reconoce el tipo de un objeto en el programa por medio de su forma sintáctica. Esto es posible porque la sintaxis de 
+Prolog especifica diferentes formas para cada tipo de datos. La forma de distinguir entre átomos y variables es que las variables empiezan 
+con letras mayúsculas, mientras que los átomos con minúsculas. No existe información adicional para comunicarle a Prolog el orden para 
+reconocer el tipo de un objeto.
+
+Los átomos pueden construirse de 3 formas:
+
+Cadenas de letras, dígitos y el caracter '_', empezando con una letra minúscula
+Cadenas de caracteres especiales
+Cadenas de caracteres encerradas en apóstrofes. Esto se utiliza cuando se quiere, por ejemplo, tener un átomo que empiece con una letra 
+mayúscula.
+
+<strong>VARIABLES</strong>
+Cuando una variable aparece en una cláusula sola, no se necesita inventar un nombre para ella. Se usa llamarla variable "anónima", cuando 
+es escrito únicamente el signo '_'. Por ejemplo, consideremos la siguiente regla:
+
+hijo(X) :- padre (X,Y).
+
+La regla dice: para toda X, X tiene un hijo si X es el padre de alguna Y. Nosotros estamos definiendo la propiedad hijo el cual, no depende 
+del nombre del hijo. Entonces, aquí hay un lugar en donde podemos usar una variable anónima. Si rescribimos la cláusula:
+
+hijo(X) :- padre(X,_).
+
+<strong>PREDICADOS</strong>
+Un predicado es la relación directa con una expresión. Cada predicado usado en una cláusula de Prolog debe ser declarado, basado en la 
+declaración de los tipos de dominios para cada uno de los nombres de los objetos.
+
+paciente(nombre, edad, peso, presion_sanguínea).
+mercado(encargado, vendedor).
+
+<strong>ESTRUCTURAS</strong>
+Los objetos estructurados (o simplemente estructuras) son objetos que tienen varios componentes. Los componentes pueden ser a su vez 
+estructuras. Por ejemplo, la fecha, puede ser vista como una estructura con 3 componentes: día, mes y año. Las estructuras son tratadas en 
+el programa como objetos simples, aunque estén formadas por muchos componentes. El orden en que se combinan los componentes dentro de un 
+objeto simple, es la forma en que escogemos una functor. Un functor conveniente para nuestro ejemplo es fecha. Entonces la fecha 1o. de 
+Enero 1975 puede escribirse:
+
+fecha(1, enero, 1975)
+
+<strong>ESQUELETO DE PROGRAMA</strong>
+REGLAS Y HECHOS
+mamifero(perro).
+Animal(x) :- mamifero(x).
+CONSULTAS
+?-Animal(gato)
+RESULTADOS Y ERRORES
+true
+			
+			</pre>
+			<h3>Aplicacion a descargar para editar y ejecutar</h3><p></p>
+			SWI PROLOG
+			<h3>Paradigma al que pertenece</h3><p></p>
+			Lenguaje logico y declarativo
+			<h3>Ejemplo de programa</h3><p></p>
+			<pre>
+<strong>Escribimos en un archivo de texto ’parejas.pl’:</strong>
+chica(rosa).
+chica(laura).
+chica(ana).
+chico(pedro).
+chico(juan).
+chico(pablo).
+pareja(X,Y):- chico(X), chica(Y).
+<strong>Guardamos el archivo y lo consultamos (cargamos) desde el interprete:</strong>
+?- [parejas].
+</pre>
+
+			</p>
+		</div>
+	</div>
+</body>
+</html>

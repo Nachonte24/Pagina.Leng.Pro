@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 13</title>
+<link rel="stylesheet" type="text/css" href="CSS/es-programas.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea12.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea14.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<center><h1>TAREA 13</h1></center>
+			<p></p>
+			
+			<hr>
+			
+			<p><h2>DESCRIPCION</h2><p></p>
+			<i></pre>
+Elaborar un programa en JAVA y RUBY que realice una búsqueda de un número en un vector, mostrando solamente un mensaje indicando cuantas veces apareció el número. Además de imprimir el vectorEjemplo:Valor a buscar: 4“El número 4 aparece 2 veces en el vector: ”1    4    7   9   21    4      0     2     5   2
+			</pre></i>
+			
+			<hr>
+			
+			<h2>PROGRAMACION JAVA</h2><p></p>
+			<pre>
+/*  NOMBRE : OSCAR IGNACIO GUAJARDO HERNANDEZ
+MATRICULA : 1865021  HORA: V4-6;*/
+
+import javax.swing.JOptionPane;
+
+public class T13BusquedaVector
+{
+	public static void main (String[] arg)
+	{
+		String ventana, mensaje="";
+		int i, bus, numenc=0;
+		//numenc Numero de veces encontrado
+		int A[]= {1, 4, 7, 9, 21, 4, 0, 2, 5, 2};
+		boolean enc=false; //variable para indicar que se encontro
+		ventana= JOptionPane.showInputDialog("BIENVENIDO A LA BUSQUEDA DE VECTORES\n"
+				+ "Introduzca el numero que desea encontrar ");
+		//Busqueda del numero
+		bus = Integer.parseInt(ventana);
+		i=0;
+		while(i<10)
+		{
+			if(A[i]==bus)
+			{
+				enc=true;
+				numenc++;
+			}
+			i++;
+		}
+		//se guarda el vector
+		mensaje="Su vector es: ";
+		for(i=0; i<10; i++)
+		{
+			mensaje=mensaje+A[i]+", ";
+		}
+		//Impresion de resultado
+		if(enc==true)
+		{
+			JOptionPane.showMessageDialog(null, mensaje+"\nEl "+bus+" se encontró "+numenc+" veces en el vector");
+		}else {
+			JOptionPane.showMessageDialog(null, mensaje+"\nEl numero "+bus+" no fue encontrado");
+		}
+	}
+}
+			</pre>
+
+		<hr>
+
+			<h2>PROGRAMACION RUBY</h2><p></p>
+			<pre>
+=begin
+Nombre: OSCAR IGNACIO GUAJARDO HERNANDEZ
+Matricula:1865021
+Hora: V4-6 Martes
+=end
+puts "BIENVENIDO BUSQUEDA DE VECTOR "
+puts "Introduzca el numero a encontrar: "
+bus = gets().to_i
+enc = false
+numenc=0
+a = [1,4,7,9,21,4,0,2,5,2]
+i=0
+mensaje = ""
+while i<10
+  if a[i]==bus
+    enc=true
+    numenc=numenc+1
+  end
+  i=i+1
+end
+print "Su vector es: "
+for i in (0...10)
+  mensaje = "#{mensaje} #{a[i]}, "
+end
+if enc == true
+  puts "#{mensaje} El #{bus} se encontro #{numenc} veces"
+else
+  puts "#{mensaje} El numero #{bus} no fue encontrado"
+end
+			</pre>
+
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>

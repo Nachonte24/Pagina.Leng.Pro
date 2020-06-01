@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAREA 14</title>
+<link rel="stylesheet" type="text/css" href="CSS/es-programas.css">
+</head>
+<body>
+	<!--MENU-->
+	<div class="regresar">
+		<a href="tarea13.html"><<a>
+	</div>
+	<div class="principal">
+		<a href="MenuTareas.html">MENU PRINCIPAL<a>
+	</div>
+	<div class="siguiente">
+		<a href="tarea15.html">><a>
+	</div>
+	<br style="clear: both;" />
+	<div class="tarea">
+		<div class="diferente">
+			<center><h1>TAREA 14</h1></center>
+			<p></p>
+			
+			<hr>
+			
+			<p><h2>DESCRIPCION</h2><p></p>
+			<i><pre>
+Construya un programa en JAVA y RUBY que, al recibir como datos un arreglo 
+bidimensional de NxMelementos de tipo entero y un número entero, determine cuántas 
+veces se encuentra este número dentro del arreglo. Además, que imprima la matriz 
+al final
+
+			</pre></i>
+			
+			<hr>
+			
+			<h2>PROGRAMACION JAVA</h2><p></p>
+<pre>
+ /*  NOMBRE : OSCAR IGNACIO GUAJARDO HERNANDEZ
+MATRICULA : 1865021  HORA: V4-6;*/
+
+import javax.swing.JOptionPane;
+
+public class T14BusquedaMatriz
+{
+	public static void main (String[] arg)
+	{
+		String ventana, mensaje="";
+		int i, bus, numenc=0, n, m, j;
+		//numenc Numero de veces encontrado
+		boolean enc=false; //variable para indicar que se encontro
+		JOptionPane.showMessageDialog(null, "BIENVENIDO A LA BUSQUEDA DE VECTORES\n"
+				+ "Vamos a empezar declarando las dimensiones de la matriz ");
+		
+		ventana = JOptionPane.showInputDialog("Introduzca el numero de filas");
+		n = Integer.parseInt(ventana);
+		ventana = JOptionPane.showInputDialog("Introduzca el numero de columnas");
+		m = Integer.parseInt(ventana);
+		//declaracion del arreglo
+		int A[][] = new int [n][m];
+		JOptionPane.showMessageDialog(null, "Ahora rellenaremos la Matriz");
+		for(i=0; i< n; i++)
+		{
+			for(j=0; j< m; j++)
+			{
+				ventana = JOptionPane.showInputDialog("Introduzca el numero en A["+i+"]["+j+"]: ");
+				A[i][j] = Integer.parseInt(ventana);
+			}
+		}
+		
+		ventana = JOptionPane.showInputDialog("Ahora buscaremos un numero\n"
+				+ "Introduzca el numero que desee encontrar en la matriz: ");
+		//Busqueda del numero
+		bus = Integer.parseInt(ventana);
+		
+		i=0;
+		for(i=0; i< n; i++)
+		{
+			for(j=0; j< m; j++)
+			{
+				if(bus == A[i][j])
+				{
+					enc=true;
+					numenc++;
+				}
+			}
+		}
+		//se enseña el vector
+		mensaje="Su vector es: \n";
+		for(i=0; i< n; i++)
+		{
+			for(j=0; j< m; j++)
+			{
+				mensaje = mensaje + A[i][j] + ", ";
+			}
+			mensaje = mensaje + "\n";
+		}
+		//Impresion de resultado
+		if(enc==true)
+		{
+			JOptionPane.showMessageDialog(null, mensaje+"\nEl "+bus+" se encontró "+numenc+" veces en la matriz");
+		}else {
+			JOptionPane.showMessageDialog(null, mensaje+"\nEl numero "+bus+" no fue encontrado");
+		}
+	}
+}
+</pre>
+		<hr>
+
+			<h2>PROGRAMACION RUBY</h2><p></p>
+			<pre>
+=begin
+Nombre: OSCAR IGNACIO GUAJARDO HERNANDEZ
+Matricula:1865021
+Hora: V4-6 Martes
+=end
+enc=false
+numenc=0
+mensaje =""
+puts "BIENVENIDO BUSQUEDA DE MATRIZ "
+puts "Vamos a empezar declarando las dimensiones de la matriz "
+puts"Introduzca el numero de filas"
+n = gets().to_i
+puts"Introduzca el numero de columnas"
+m = gets().to_i
+a = Array.new(n){Array.new(m)}
+puts "Ahora rellenaremos la Matriz"
+for i in (0...n)
+  for j in (0...m)
+    print "Introduzca el numero en A[#{i+1}][#{j+1}]: "
+    a[i][j]= gets().to_i
+  end
+end
+puts "Ahora buscaremos un numero"
+puts "Introduzca el numero que desee encontrar en la matriz: "
+bus = gets().to_i
+for i in (0...n)
+  for j in (0...m)
+    if bus == a[i][j]
+      enc=true
+      numenc=numenc+1
+    end
+  end
+end
+puts "Su vector es: "
+for i in (0...n)
+  for j in (0...m)
+    mensaje = "#{mensaje} #{a[i][j]}, "
+  end
+  mensaje = "#{mensaje} \n"
+end
+if enc==true
+  puts "#{mensaje} El #{bus} se encontro #{numenc} veces"
+else
+  puts "#{mensaje} El numero #{bus} no se encontro"
+end
+
+			</pre>
+
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>
